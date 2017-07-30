@@ -1,5 +1,3 @@
-'use strict';
-
 if (module.hot) {
   module.hot.accept();
 }
@@ -24,8 +22,8 @@ var fetchConfig = { method: 'GET',
 const AllPages = (state, actions, data, emit) => {
   return (
     <div>
-      <h1>Hello world</h1>
-      <a href="/about">About</a> <a href="/testing">Testing</a> <a href="/another">Another</a> <a href="/">Home</a>
+      <a href="/">Home</a> <a href="/about">About</a> <a href="/testing">Testing</a> <a href="/another">Another</a><br />
+      <a href="/projects">Projects</a> <a href="/projects/test">Test Project</a>
 
       <main id="content-area" loading={state.loading} />
     </div>
@@ -37,7 +35,7 @@ app({
   mixins: [Router],
 
   state: {
-    apiUrl: 'http://localhost:1111/api/v1/pages',
+    apiUrl: 'http://192.168.0.101:1111/api/v1/pages',
     loading: true,
   },
 
@@ -50,6 +48,31 @@ app({
       state.loading = false;
 
       return state;
+    },
+    updatePageMeta: (state, actions, meta) => {
+      var titleTag = document.getElementById('meta-title');
+      var descriptionTag = document.getElementById('meta-description');
+
+      // Update meta title tag
+      if (meta && meta.title) {
+        titleTag.innerHTML = meta.title;
+      } else {
+        // get h1 and use as title
+        var h1 = document.getElementsByTagName('h1');
+
+        if (h1) {
+          titleTag.innerHTML = h1[0].innerText;
+        } else {
+          titleTag.innerHTML = "Cameron Zaas | CZaas.com";
+        }
+      }
+
+      // Update meta description tag
+      if (meta && meta.description) {
+        descriptionTag.attributes.content.value = meta.description;
+      } else {
+        descriptionTag.attributes.content.value = "";
+      }
     },
   },
 
@@ -93,9 +116,9 @@ app({
         .then((res) => {
           return res.json();
         }).then((pageResponse) => {
-          console.log(pageResponse);
           if (pageResponse.success) {
-            actions.updateCurrentPage(pageResponse.content);
+            actions.updateCurrentPage(pageResponse.content.html);
+            actions.updatePageMeta(pageResponse.content.meta);
           }
         });
     },

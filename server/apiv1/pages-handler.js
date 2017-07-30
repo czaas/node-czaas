@@ -2,7 +2,11 @@ var express = require('express');
 var router = express.Router();
 var fs = require('fs-extra');
 var MarkdownIt = require('markdown-it'),
-    md = new MarkdownIt();
+    md = new MarkdownIt({
+      html: true,
+    });
+
+var marked = require('meta-marked');
 
 router.get('/', function(req, res) {
   // If path doesn't begin with slash, send 404
@@ -14,14 +18,28 @@ router.get('/', function(req, res) {
       - Else return 404.md
     */
     lookForFolderIndex(req.query.path, function(fileRes) {
-      res.send(fileRes);
+      res.send(processMarkdown(fileRes));
     });
   } else {
     getFourZeroFour(function(content) {
-      res.send(content);
+      res.send(processMarkdown(content));
     });
   }
 });
+
+
+function processMarkdown(mdFile) {
+  var myContent = {
+    content: mdFile.content,
+    success: mdFile.success,
+  };
+
+  // need to remove meta and send it down as a param
+  myContent.content = marked(mdFile.content);
+  return myContent;
+}
+
+
 
 function getFourZeroFour(cb) {
   var response = {
@@ -33,7 +51,7 @@ function getFourZeroFour(cb) {
     if (err) { throw err; }
     
     response.success = true;
-    response.content = md.render(file);
+    response.content = file;
     cb(response);
   });
 }
@@ -50,7 +68,7 @@ function lookForFolderIndex(thePath, cb) {
     if (exists) {
       fs.readFile(lookingFor, 'utf8', function(err, file) {
         folderResponse.success = true;
-        folderResponse.content = md.render(file);
+        folderResponse.content = file;
         cb(folderResponse);
       });
     } else {
@@ -80,7 +98,7 @@ function lookForFile(thePath, cb) {
       fs.readFile(fileToFind, 'utf8', function(err, file) {
         if (err) { throw err; }
         fileResponse.success = true;
-        fileResponse.content = md.render(file);
+        fileResponse.content = file;
         
         cb(fileResponse);
       });

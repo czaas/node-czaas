@@ -25,10 +25,7 @@ const AllPages = (state, actions, data, emit) => {
   return (
     <div>
       <h1>Hello world</h1>
-      <a href="/testing">Testing</a>
-      <a href="/another">Another</a>
-      <a href="/">Home</a>
-      <a href="http://google.com/" target="_blank">Leaving site</a>
+      <a href="/about">About</a> <a href="/testing">Testing</a> <a href="/another">Another</a> <a href="/">Home</a>
 
       <main id="content-area" loading={state.loading} />
     </div>
@@ -60,7 +57,7 @@ app({
     loaded: (state, actions, data, emit) => {
       emit('getCurrentPage', window.location.pathname);
     },
-    
+
     route: (state, actions, routeParams) => {
       console.log(window.location.pathname);
     },

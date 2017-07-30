@@ -1,7 +1,3 @@
-title: About Cameron
-description: About me
----
-
 # My Site server setup
 
 `npm i`

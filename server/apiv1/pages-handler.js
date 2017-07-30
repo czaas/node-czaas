@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var fs = require('fs-extra');
+var MarkdownIt = require('markdown-it'),
+    md = new MarkdownIt();
 
 router.get('/', function(req, res) {
   // If path doesn't begin with slash, send 404
@@ -31,7 +33,7 @@ function getFourZeroFour(cb) {
     if (err) { throw err; }
     
     response.success = true;
-    response.content = file;
+    response.content = md.render(file);
     cb(response);
   });
 }
@@ -48,7 +50,7 @@ function lookForFolderIndex(thePath, cb) {
     if (exists) {
       fs.readFile(lookingFor, 'utf8', function(err, file) {
         folderResponse.success = true;
-        folderResponse.content = file;
+        folderResponse.content = md.render(file);
         cb(folderResponse);
       });
     } else {
@@ -78,7 +80,7 @@ function lookForFile(thePath, cb) {
       fs.readFile(fileToFind, 'utf8', function(err, file) {
         if (err) { throw err; }
         fileResponse.success = true;
-        fileResponse.content = file;
+        fileResponse.content = md.render(file);
         
         cb(fileResponse);
       });

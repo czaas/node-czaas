@@ -27,7 +27,8 @@
     "express": "^4.15.3",
     "fs-extra": "^4.0.0",
     "hyperapp": "^0.9.3",
-    "hyperapp-router": "^0.2.2"
+    "hyperapp-router": "^0.2.2",
+    "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
     "babel-core": "^6.9.0",

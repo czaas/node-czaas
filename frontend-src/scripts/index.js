@@ -23,14 +23,11 @@ var navItems = [{
   path: '/',
   content: 'Home',
 },{
-  path: '/about',
-  content: 'About Me',
-},{
   path: '/projects',
   content: 'Projects',
 },{
-  path: '/testing',
-  content: '404 test',
+  path: '/about',
+  content: 'About Me',
 }];
 
 const NavItems = ({ items, actions, location }) => {

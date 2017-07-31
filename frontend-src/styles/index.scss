@@ -1,5 +1,5 @@
 $color-initial: #fff;
-$color-primary: red;
+$color-primary: #285287;
 $color-secondary: #222;
 $color-tertiary: #f4f5f6;
 $color-quaternary: #c4c4c4;
@@ -71,10 +71,47 @@ body {
     position: absolute;
     width: 80%;
     height: 100%;
-    background: #2d2d2d;
+    background: #1d1d1d;
     color: #fff;
     padding: 15px 15px 57px;
     z-index: 5;
+
+    div {
+      padding: 0 12px 15px;
+      font-size: 2rem;
+    }
+
+    ul {
+      marign: 0;
+      padding: 0;
+
+      li {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        border-bottom: 1px solid #3f3f3f;
+
+        a {
+          display: block;
+          padding: 8px 12px;
+          color: #285287;
+
+          &:hover {
+            color: #fff;
+            background: rgba(255,255,255,.2);
+          }
+
+          &.active {
+            color: #eee;
+            background: rgba(255,255,255,.1);
+          }
+        }
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
   }
 
   &__background {
@@ -83,14 +120,21 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,.8);
+    background: rgba(0,0,0,.3);
   
     z-index: 4;
-    opacity: 1;
+    opacity: 0;
   }
 
   &--open {
     transform: translate3d(0,0,0);
+
+    .sidebar__background {
+      opacity: 1;
+    }
+    .sidebar__nav {
+      box-shadow: -2px 0px 20px 0px #000;
+    }
   }
 
   @media screen and (min-width: $navChangeBreakpoint) {

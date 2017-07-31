@@ -19,7 +19,6 @@ router.get('/', function(req, res) {
       - Else serve 404.md
     */
     lookForFolderIndex(req.query.path, function(fileRes) {
-      console.log(fileRes);
       res.send(processMarkdown(fileRes));
     });
   } else {

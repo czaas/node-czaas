@@ -14,8 +14,9 @@ router.get('/', function(req, res) {
     /*
     If trailing forward slash,
       - Look for folder with index.md
-      - Else remove trailing slash and look for file with .md
-      - Else return 404.md
+        - check If it exists; serve it;
+      - Else If remove trailing slash and look for file with .md; exists; serve it;
+      - Else serve 404.md
     */
     lookForFolderIndex(req.query.path, function(fileRes) {
       res.send(processMarkdown(fileRes));

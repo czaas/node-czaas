@@ -25,6 +25,7 @@ app.use(function (req, res, next) {
     next();
 });
 
+// setting public folder
 app.use(express.static('./server/public'));
 
 // API routes
@@ -33,7 +34,8 @@ app.use('/api/v1/pages', v1PagesHandler);
 
 // Catch all else routes
 app.get('*', function(req, res) {
-  res.sendFile(__dirname + '/public/index.html');
+    console.log(req.path);
+    res.sendFile(__dirname + '/public/index.html');
 });
 
 app.listen('1111', function() {

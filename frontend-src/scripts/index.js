@@ -112,7 +112,6 @@ app({
     },
 
     route: (state, actions, routeParams, emit) => {
-      console.log(window.location.pathname);
       emit('getCurrentPage', window.location.pathname);
       window.scrollTo(0,0);
     },

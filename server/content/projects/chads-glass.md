@@ -1,7 +1,9 @@
 ---
-title: Chads Glass | SPA developed by Cameron Zaas
+title: Chad's Glass | SPA developed by Cameron Zaas
 description: Instagram feed wrapped in personalized UI with infinite loading
 ---
+
+# Chad's Glass
 
 This site reaches out to instagram for the first 20 or so posts and displays them in a grid. You can pull up the modal by clicking on one of the thumbnails. Videos have a video icon in the top right corner.
 

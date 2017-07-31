@@ -34,7 +34,6 @@ app.use('/api/v1/pages', v1PagesHandler);
 
 // Catch all else routes
 app.get('*', function(req, res) {
-    console.log(req.path);
     res.sendFile(__dirname + '/public/index.html');
 });
 

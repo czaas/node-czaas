@@ -19,8 +19,44 @@ var fetchConfig = { method: 'GET',
                accessControlOrigin: '*',
                cache: 'default' };
 
-const AllPages = (state, actions, data, emit) => {
+var navItems = [{
+  path: '/',
+  content: 'Home',
+},{
+  path: '/about',
+  content: 'About Me',
+},{
+  path: '/projects',
+  content: 'Projects',
+},{
+  path: '/testing',
+  content: '404 test',
+}];
 
+const NavItems = ({ items, actions, location }) => {
+  return items.map((item) => {
+    var isCurrentRoute = false;
+
+    if (item.path === location) {
+      isCurrentRoute = true;
+    } else if (location !== '/' && item.path !== '/' && location.includes(item.path)) {
+      isCurrentRoute = true;
+    }
+
+    return (
+      <li>
+        <a 
+          href={item.path} 
+          class={`${isCurrentRoute ? 'active' : ''}`}
+        >
+          {item.content}
+        </a>
+      </li>
+      );
+  });
+};
+
+const AllPages = (state, actions, data, emit) => {
   return (
     <div class="view">
       <div class={`sidebar ${ state.menuOpen ? "sidebar--open" : "" }`}>
@@ -30,11 +66,7 @@ const AllPages = (state, actions, data, emit) => {
             Cameron Zaas
           </div>
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/testing">404 test</a></li>
-            <li><a href="/another">Another test</a></li>
-            <li><a href="/projects">Projects</a> </li>
+            <NavItems items={navItems} actions={actions} location={window.location.pathname} />
           </ul>
         </nav>
       </div>

@@ -1,6 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var fs = require('fs-extra');
+var MarkdownIt = require('markdown-it'),
+    md = new MarkdownIt({
+      html: true,
+    });
+
+var marked = require('meta-marked');
 
 router.get('/', function(req, res) {
   // If path doesn't begin with slash, send 404
@@ -8,18 +14,34 @@ router.get('/', function(req, res) {
     /*
     If trailing forward slash,
       - Look for folder with index.md
-      - Else remove trailing slash and look for file with .md
-      - Else return 404.md
+        - check If it exists; serve it;
+      - Else If remove trailing slash and look for file with .md; exists; serve it;
+      - Else serve 404.md
     */
     lookForFolderIndex(req.query.path, function(fileRes) {
-      res.send(fileRes);
+      console.log(fileRes);
+      res.send(processMarkdown(fileRes));
     });
   } else {
     getFourZeroFour(function(content) {
-      res.send(content);
+      res.send(processMarkdown(content));
     });
   }
 });
+
+
+function processMarkdown(mdFile) {
+  var myContent = {
+    content: mdFile.content,
+    success: mdFile.success,
+  };
+
+  // need to remove meta and send it down as a param
+  myContent.content = marked(mdFile.content);
+  return myContent;
+}
+
+
 
 function getFourZeroFour(cb) {
   var response = {

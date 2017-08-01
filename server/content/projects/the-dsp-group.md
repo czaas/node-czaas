@@ -10,12 +10,12 @@ Below you see three view-ports, small, medium, and large. When making websites I
 
 ### Small viewport
 
-![Small viewport](http://192.168.0.101:1111/images/dsp-sm.jpg)
+![Small viewport](http://192.168.0.100:1111/images/dsp-sm.jpg)
 
 ### Medium viewport
 
-![Medium viewport](http://192.168.0.101:1111/images/dsp-md.jpg)
+![Medium viewport](http://192.168.0.100:1111/images/dsp-md.jpg)
 
 ### Large viewport
 
-![Large viewport](http://192.168.0.101:1111/images/dsp-lg.jpg)
+![Large viewport](http://192.168.0.100:1111/images/dsp-lg.jpg)

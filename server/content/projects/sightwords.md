@@ -15,16 +15,16 @@ If your web browser supports the speech synthesis API, a sound icon will appear 
 
 ### Choosing list type
 
-![Choosing list type](http://192.168.0.101:1111/images/sightwords-list.jpg)
+![Choosing list type](http://192.168.0.100:1111/images/sightwords-list.jpg)
 
 ### Single word view
 
-![Single word view](http://192.168.0.101:1111/images/sightwords-single.jpg)
+![Single word view](http://192.168.0.100:1111/images/sightwords-single.jpg)
 
 ### Group of words view
 
-![Group of words view](http://192.168.0.101:1111/images/sightwords-group.jpg)
+![Group of words view](http://192.168.0.100:1111/images/sightwords-group.jpg)
 
 ### Manage account
 
-![Manage account](http://192.168.0.101:1111/images/sightwords-manage-account.jpg)
+![Manage account](http://192.168.0.100:1111/images/sightwords-manage-account.jpg)

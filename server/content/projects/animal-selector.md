@@ -13,8 +13,8 @@ Check out the <a href="https://czaas.github.io/animal-selector/" target="_blank"
 
 ### Landing screen
 
-![Landing screen](http://192.168.0.101:1111/images/animal-selector.jpg)
+![Landing screen](http://192.168.0.100:1111/images/animal-selector.jpg)
 
 ### Animal Selected
 
-![Animal Selected](http://192.168.0.101:1111/images/animal-selector-open.jpg)
+![Animal Selected](http://192.168.0.100:1111/images/animal-selector-open.jpg)

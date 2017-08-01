@@ -5,7 +5,7 @@ description: I build easy to use dynamic and responsive applications, plugins, a
 
 # Hi, I'm Cameron Zaas
 
-I'm proficient in JavaScript, CSS, and HTML. I've worked with various frameworks such as React JS, Angular JS, WordPress. I've worked with various back end technologies such as Node JS, PHP, Cold Fusion, and ASP.NET. 
+I'm proficient in JavaScript, CSS, and HTML. I've worked with various frameworks such as React JS, Angular JS, WordPress. I've worked with various technologies such as Node JS, PHP, Cold Fusion, and ASP.NET. 
 
 I love digging into my unknown, working with API's, and learning about awesome stuff. I have found web development to be a challenging and rewarding endeavor.
 

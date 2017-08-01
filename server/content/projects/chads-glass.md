@@ -13,4 +13,4 @@ I decided to use <a href="https://github.com/hyperapp/hyperapp" target="_blank">
 
 Check it out <a href="http://chads-glass.czaas.com" target="_blank">chads-glass.czaas.com</a>.
 
-![Image of modal on Chads Glass](http://192.168.0.101:1111/images/chads-glass-site.jpg)
+![Image of modal on Chads Glass](http://192.168.0.100:1111/images/chads-glass-site.jpg)

@@ -69,7 +69,12 @@ const AllPages = (state, actions, data, emit) => {
           </div>
         </nav>
       </div>
-      <main loading={state.loading}>
+      <main class={state.loading ? 'loading' : ''}>
+          <svg class="loading-icon" xmlns="http://www.w3.org/2000/svg" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+            <circle cx="50" cy="50" fill="none" ng-attr-stroke="{{config.color}}" ng-attr-stroke-width="{{config.width}}" ng-attr-r="{{config.radius}}" ng-attr-stroke-dasharray="{{config.dasharray}}" stroke="#285287" stroke-width="6" r="30" stroke-dasharray="141.37166941154067 49.12388980384689" transform="rotate(329.772 50 50)">
+              <animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 50;360 50 50" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"/>
+            </circle>
+          </svg>
         <div id="content-area" />
       </main>
       <a class="view__nav-button nowatch" onclick={actions.toggleMenu}>
@@ -90,6 +95,12 @@ app({
   },
 
   actions: {
+    toggleLoading: (state, actions, isLoading) => {
+      state.loading = isLoading ? isLoading : !state.loading;
+
+      return state;
+    },
+
     updateCurrentPage: (state, actions, htmlString) => {
       var contentArea = document.getElementById('content-area');
 
@@ -165,8 +176,7 @@ app({
             actions.router.go(href);
 
             actions.toggleMenu({ forceStatus: false });
-            state.loading = true;
-            return state;
+            actions.toggleLoading(true);
           }
         }
       }

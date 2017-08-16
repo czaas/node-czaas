@@ -26,6 +26,37 @@ body {
     }
   }
 
+  main {
+    #content-area {
+      opacity: 1;
+      transition: opacity .2s ease-out;
+    }
+    .loading-icon {
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        pointer-events: none;
+
+        transition: opacity .2s ease-out;
+
+        @media screen and (min-width: $navChangeBreakpoint) {
+          transform: translateX(0);
+        }
+      }
+
+    &.loading {
+      .loading-icon {
+        opacity: 1;
+      }
+
+      #content-area {
+        opacity: .2;
+      }
+    }
+  }
+
   @media screen and (min-width: $navChangeBreakpoint) {
     .sidebar {
       width: 100%;
@@ -39,9 +70,7 @@ body {
     }
 
     main {
-      padding-left: 275px;
-
-      & > div {
+      #content-area {
         max-width: 1200px;
         margin: 0 auto;
       }
@@ -147,7 +176,11 @@ body {
 }
 
 main {
-  padding: 15px 15px 57px;;
+  padding: 15px 15px 57px;
+
+  @media screen and (min-width: $navChangeBreakpoint) { 
+    padding: 15px 30px 57px 275px;
+  }
 }
 
 .row--about .column-6 {

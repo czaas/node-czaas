@@ -13,4 +13,4 @@ I focused heavily on the UX when I created this so the guards can spend less tim
 
 ### Veiwport of login screen
 
-![Veiwport of login screen](http://192.168.0.100:1111/images/bomar-log-in.jpg)
+![Veiwport of login screen](/images/bomar-log-in.jpg)

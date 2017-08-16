@@ -13,10 +13,10 @@ I'm a proud husband and father of two. Emily, Liam, and Dylan are my world. We s
 
 <div class="row row--about">
   <div class="column-6">
-    <img src="http://192.168.0.100:1111/images/about-my-wife-and-i.jpg" alt="Emily and I">
+    <img src="/images/about-my-wife-and-i.jpg" alt="Emily and I">
   </div>
   <div class="column-6">
-    <img src="http://192.168.0.100:1111/images/about-me-liam-and-dylan.jpg" alt="From left to right; Me, Dylan, and Liam">
+    <img src="/images/about-me-liam-and-dylan.jpg" alt="From left to right; Me, Dylan, and Liam">
   </div>
 </div>
 
@@ -28,10 +28,10 @@ I made it to the Chamberlin Archery Tournement in April 2017 where I met some gr
 
 <div class="row row--about">
   <div class="column-6">
-    <img src="http://192.168.0.100:1111/images/about-me.jpg" alt="Me durring archery competition">
+    <img src="/images/about-me.jpg" alt="Me durring archery competition">
   </div>
   <div class="column-6">
-    <img src="http://192.168.0.100:1111/images/about-archery-turkey-shot.jpg" alt="Turkey shot!!!">
+    <img src="/images/about-archery-turkey-shot.jpg" alt="Turkey shot!!!">
   </div>
 </div>
 

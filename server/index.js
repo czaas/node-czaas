@@ -29,7 +29,7 @@ app.use(function (req, res, next) {
 app.use(express.static('./server/public'));
 
 // API routes
-var v1PagesHandler = require('./apiV1/pages-handler.js');
+var v1PagesHandler = require('./apiv1/pages-handler.js');
 app.use('/api/v1/pages', v1PagesHandler);
 
 // Catch all else routes

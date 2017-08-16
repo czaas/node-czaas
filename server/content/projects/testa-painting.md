@@ -13,8 +13,8 @@ I used bxslider to showcase the images and SASS for the styles as well as a simp
 
 ### Small viewport
 
-![Small viewport](http://192.168.0.100:1111/images/testa-mobile.jpg)
+![Small viewport](/images/testa-mobile.jpg)
 
 ### Large viewport
 
-![Large viewport](http://192.168.0.100:1111/images/testa-desktop.jpg)
+![Large viewport](/images/testa-desktop.jpg)

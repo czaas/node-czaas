@@ -23,14 +23,11 @@ var navItems = [{
   path: '/',
   content: 'Home',
 },{
-  path: '/about',
-  content: 'About Me',
-},{
   path: '/projects',
   content: 'Projects',
 },{
-  path: '/testing',
-  content: '404 test',
+  path: '/about',
+  content: 'About Me',
 }];
 
 const NavItems = ({ items, actions, location }) => {
@@ -62,12 +59,14 @@ const AllPages = (state, actions, data, emit) => {
       <div class={`sidebar ${ state.menuOpen ? "sidebar--open" : "" }`}>
         <div class="sidebar__background" onclick={actions.toggleMenu} />
         <nav class="sidebar__nav">
-          <div>
-            Cameron Zaas
+          <div class="sidebar__nav__content">
+            <div class="sidebar__nav__content__name">
+              Cameron Zaas
+            </div>
+            <ul>
+              <NavItems items={navItems} actions={actions} location={window.location.pathname} />
+            </ul>
           </div>
-          <ul>
-            <NavItems items={navItems} actions={actions} location={window.location.pathname} />
-          </ul>
         </nav>
       </div>
       <main loading={state.loading}>

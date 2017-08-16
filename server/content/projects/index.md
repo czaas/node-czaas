@@ -5,6 +5,14 @@ description: Here's a list of my projects that I've done some sort of a write up
 
 # Some of my projects
 
+## My Personal site
+
+<a href="/projects/node-czaas">![Sight Words Logo](/images/node-czaas-logo.jpg)</a>
+
+I rebuilt my website using Node JS Express server with an API that fetches static markdown files and a front end SPA using Hyperapp.
+
+[View my write up](/projects/node-czaas)
+
 ## Sight Words
 
 <a href="/projects/sightwords">![Sight Words Logo](/images/sightwords-logo.jpg)</a>

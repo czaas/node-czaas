@@ -30,7 +30,7 @@ var navItems = [{
   content: 'About Me',
 }];
 
-const NavItems = ({ items, actions, location }) => {
+var NavItems = ({ items, actions, location }) => {
   return items.map((item) => {
     var isCurrentRoute = false;
 
@@ -53,7 +53,7 @@ const NavItems = ({ items, actions, location }) => {
   });
 };
 
-const AllPages = (state, actions, data, emit) => {
+var AllPages = (state, actions, data, emit) => {
   return (
     <div class="view">
       <div class={`sidebar ${ state.menuOpen ? "sidebar--open" : "" }`}>
